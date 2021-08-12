@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "env $(grep -v '^#' .env) nodemon index.js",
-    "start": "env $(grep -v '^#' .env) node index.js"
+    "start": "env $(grep -v '^#' .env) node index.js",
+    "staging:clean": "git fetch origin --prune 'refs/tags/*:refs/tags/*' && git push origin --delete $(git tag -l 'demo-*') || true && git fetch origin --prune 'refs/tags/*:refs/tags/*'",
+    "staging:deploy": "yarn staging:clean && TAG=`echo demo-$(date +%Y%m%d-%H%M%S)` && git tag $TAG && git push origin $TAG"
   },
   "engines": {
     "node": ">= 12.0.0"
