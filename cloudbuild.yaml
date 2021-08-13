@@ -40,5 +40,5 @@ substitutions:
   _SECRET_NAME: demo-gcp
   _DECRYPTED_ENV_FILE_LOCATION: ./.env
   _APP_DOCKER_FILE: ./Dockerfile
-  _CLOUD_RUN_SERVICE_NAME: demo-gcp
+  _CLOUD_RUN_SERVICE_NAME: staging-demo-gcp
   _CLOUD_SQL_INSTANCES: staging-carparking-jp:asia-northeast1:aplus-staging
